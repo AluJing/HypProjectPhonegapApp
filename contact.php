@@ -1,16 +1,17 @@
-
 <?php
 
    //connessione al db
    $con = mysqli_connect('localhost','jingalmera','','my_jingalmera');
 if (!$con) 
     die('Could not connect: ' . mysqli_error($con));
-
+if($_POST['nome'] != "" && $_POST['email'] != "")
 //interrogazione db
+
 $sql = "INSERT INTO Contatti (Nome, Email, Oggetto, Descrizione)
-VALUES ('" . $_POST['nome'] . "', '" . $_POST['email'] . "', '" . $_POST['oggetto'] . "', '" . $_POST['descrizione'] . "')";
+VALUES ('" .   mysqli_real_escape_string($con,$_POST['nome']) . "', '" .   mysqli_real_escape_string($con,$_POST['email']) . "', '" .   mysqli_real_escape_string($con,$_POST['oggetto']) . "', '" .  mysqli_real_escape_string($con,$_POST['descrizione']) . "')";
 
 
+    
 if (mysqli_query($con, $sql)) {
     echo "New record created successfully";
 } else {
@@ -18,7 +19,5 @@ if (mysqli_query($con, $sql)) {
 }
 
 mysqli_close($con);
-
-
 ?>
 

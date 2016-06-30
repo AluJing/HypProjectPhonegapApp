@@ -16,7 +16,8 @@ if (!$con) {
 }
 //interrogazione db
 mysqli_select_db($con,"my_jingalmera");
-$sql="SELECT * FROM `Device` WHERE ID ='". $id. "'";
+$sql="SELECT * FROM `Device` WHERE ID ='".  mysqli_real_escape_string($con, $id)
+. "'";
 $result = mysqli_query($con,$sql);
 
 //stampo risultati
@@ -77,4 +78,4 @@ mysqli_close($con);
 }
 
 ?>
-</body>
+</body>

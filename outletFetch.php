@@ -5,9 +5,6 @@
 </head>
 <body>
 <?php
-if( $_REQUEST["offerta"] ) {
-
-   $name = $_REQUEST['offerta'];
  
 
    //connessione al db
@@ -41,7 +38,7 @@ while($row = mysqli_fetch_array($result)) {
           </div>";
 }
 mysqli_close($con);
-}
+
 
 ?>
 </body>

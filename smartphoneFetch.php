@@ -5,11 +5,6 @@
 </head>
 <body>
 <?php
-if( $_REQUEST["categoria"] ) {
-
-   $name = $_REQUEST['categoria'];
- 
-
    //connessione al db
    $con = mysqli_connect('localhost','jingalmera','','my_jingalmera');
 if (!$con) {
@@ -41,7 +36,6 @@ while($row = mysqli_fetch_array($result)) {
           </div>";
 }
 mysqli_close($con);
-}
 
 ?>
 </body>
