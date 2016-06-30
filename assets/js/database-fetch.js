@@ -1,5 +1,5 @@
 $(document).ready(function(){
-        $.get("smartphoneFetch.php", 
+        $.get("http://jingalmera.altervista.org/website/smartphoneFetch.php", 
                 { categoria: "smartphones" }, function(data, status){
     
 		document.getElementById("devicesElement").innerHTML = data;
