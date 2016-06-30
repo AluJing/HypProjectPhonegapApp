@@ -104,6 +104,7 @@
                 <li><a href="testimonial.html">Testimonial</a></li>
               </ul>
             </li>
+			<li><a href="contact.html">Contatti</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -171,18 +172,7 @@
   <!-- Wow animation -->
   <script type="text/javascript" src="assets/js/wow.js"></script> 
   <!-- fetch database data  -->
-  <script>
-  $.urlParam = function(name){
-	var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-	return results[1] || 0;
-}
-	$(document).ready(function(){
-	var res = $.urlParam('id');
-   
-	$("#deviceDetails").load("deviceDetails.php?id=" + res);
-     
-	});
-  </script>  
+  <script type="text/javascript" src="assets/js/device-detail.js"></script> 
   <!-- Custom js -->
   <script type="text/javascript" src="assets/js/custom.js"></script>
     
