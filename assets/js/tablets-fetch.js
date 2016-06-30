@@ -1,5 +1,5 @@
 $(document).ready(function(){
-        $.get("tabletFetch.php", 
+        $.get("http://jingalmera.altervista.org/tabletFetch.php", 
                 { categoria: "tablet" }, function(data, status){
     
 		document.getElementById("devicesElement").innerHTML = data;

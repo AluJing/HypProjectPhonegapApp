@@ -5,6 +5,6 @@ $.urlParam = function(name){
 	$(document).ready(function(){
 	var res = $.urlParam('id');
    
-	$("#deviceDetails").load("deviceDetails.php?id=" + res);
+	$("#deviceDetails").load("http://jingalmera.altervista.org/deviceDetails.php?id=" + res);
      
 	});
