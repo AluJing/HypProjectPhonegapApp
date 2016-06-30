@@ -8,7 +8,7 @@
     <title>TIM e Telecom in un unico portale | TIM</title>
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/icon" href="assets/images/favicon.ico"/>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <!-- Addons -->
     <!-- Font Awesome -->
     <link href="assets/css/font-awesome.css" rel="stylesheet">
@@ -93,10 +93,10 @@
           <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="outlet.html">Offerte</a></li>
-            <li><a href="device-categories.html">Prodotti</a></li>
+            <li class="active"><a href="device-categories.html">Prodotti</a></li>
             <li><a href="smartlife-categories.html">SmartLife</a></li>
             <li><a href="assistant-services.html">Assistenza</a></li>
-            <li class="dropdown active">
+            <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Chi siamo <span class="fa fa-angle-down"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="innovation-home.html">Innovazioni</a></li>
@@ -118,15 +118,15 @@
         <div class="row">
           <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="single-page-header-left">
-              <h2>Progetti</h2>
+              <h2>Smartphones</h2>
             </div>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="single-page-header-right">
               <ol class="breadcrumb">
-                <li><a href="innovation-home.html">Innovazioni</a></li>
-                <li class="active">Progetti</li>
-                <li><a href="testimonial.html">Testimonial</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="device-categories.html">Prodotti</a></li>
+                <li><a href="smartphones.html">Smartphones</a></li>
               </ol>
             </div>
           </div>
@@ -136,65 +136,8 @@
   </section>
   <!-- End single page header -->
   
-  <!-- Start blog archive -->
-  <section id="blog-archive">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="blog-archive-area">
-            <div class="row">
-              <div class="col-md-2"></div>
-              <div class="col-md-8">
-                <div class="blog-archive-left">
-                  <!-- Start blog news single -->
-                  <article class="blog-news-single">
-                    <div class="blog-news-img">
-                      <img src="assets/images/TIMlavoro.png" alt="TIM a supporto del nuovo mondo del lavoro">
-                    </div>
-                    <div class="blog-news-title">
-                      <h2>TIM a supporto del nuovo mondo del lavoro</h2>
-                    </div>
-                    <div class="blog-news-details blog-single-details">
-                      <p>TIM si afferma come partner tecnologico ideale per abilitare aziende e Pubbliche Amministrazioni all&#8217adozione dello Smart Working grazie alla ricca suite di soluzioni offerte. Ecco come diventa pi&ugrave facile lavorare da remoto.</p>
-
-                      <p>Grazie al progresso tecnologico, perfino il tempo e lo spazio diventano due coordinate modulabili: dal punto di vista professionale, questa trasformazione apre a nuove e fondamentali opportunit&agrave di crescita.</p>
-
-                      <p>
-                         Si tratta di un cambiamento che corre a un ritmo senza precedenti nella storia delle evoluzioni industriali: questo perch&eacute si tende erroneamente a considerare il progresso tecnologico come un fenomeno lineare e non esponenziale.
-                         Basti pensare, invece, come la capitalizzazione di mercato delle prime 15 aziende digitali dal 1995 al 2015 sia salita da 14 a 2.443 miliardi di dollari.
-                      </p>
-
-                      <div class="blog-single-bottom">
-                        <div class="row">
-                          <div class="col-md-12">
-                            <div class="blog-single-social">
-                              <a href="http://www.facebook.com/share.php?u=http://jingalmera.altervista.org/website/innovation-TIMLavoro.html"><i class="fa fa-facebook"></i></a>
-                              <a href="http://twitter.com/home?status=http://jingalmera.altervista.org/website/innovation-TIMLavoro.html"><i class="fa fa-twitter"></i></a>
-                              <a href="https://plus.google.com/share?url=http://jingalmera.altervista.org/website/innovation-TIMLavoro.html"><i class="fa fa-google-plus"></i></a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                  <!-- Start blog navigation -->
-                  <div class="blog-navigation-area">
-                    <div class="blog-navigation-prev">
-                      <a href="project-LeaderTLC.html">
-                        <h5>TIM leader nel settore TLC</h5>
-                        <span>Articolo Precedente</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>  
-  </section>
-  <!-- End blog archive -->
+  <!-- Start device detail fetch -->
+  <div id ="deviceDetails"><b>Output overwritten here</b></div>
 
   <!-- Start footer -->
   <footer id="footer">
@@ -227,6 +170,19 @@
   <script type="text/javascript" src="assets/js/slick.js"></script>    
   <!-- Wow animation -->
   <script type="text/javascript" src="assets/js/wow.js"></script> 
+  <!-- fetch database data  -->
+  <script>
+  $.urlParam = function(name){
+	var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+	return results[1] || 0;
+}
+	$(document).ready(function(){
+	var res = $.urlParam('id');
+   
+	$("#deviceDetails").load("deviceDetails.php?id=" + res);
+     
+	});
+  </script>  
   <!-- Custom js -->
   <script type="text/javascript" src="assets/js/custom.js"></script>
     
